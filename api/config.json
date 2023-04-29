@@ -1,0 +1,13 @@
+{
+	"development": {
+		"username": "dude",
+		"password": "PW...Shhhhhh",
+		"database": "built",
+		"host": "127.0.0.1",
+		"logging": false,
+		"options": {
+			"timezone": "America/New_York"
+		},
+		"dialect": "mysql"
+	}
+}
