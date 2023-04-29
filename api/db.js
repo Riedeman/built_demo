@@ -48,6 +48,10 @@ async function query(q) {
 	});
 }
 
+function clean(t) {
+	return t ? t.replaceAll("'", "''").trim() : null;
+}
+
 const utilities = {
 	findByPK: findByPK,
 	findOne: findOne,
@@ -72,7 +76,3 @@ async function runTest(req, res) {
 	}
 };
 runTest();
-
-function clean(t) {
-	return t ? t.replaceAll("'", "''").trim() : null;
-}

@@ -54,7 +54,6 @@ exports.generateData = async (req, res) => {
 		let categories = ["General", "Technology", "Randon"];
 		for (let category of categories) {
 			let query = `insert into categories (name) values ('${category}')`
-			console.log("running", query);
 			DB.query(query);
 		}
 		let posts = [{
@@ -73,4 +72,3 @@ exports.generateData = async (req, res) => {
 	}
 	res.json({success: true});
 }
-
