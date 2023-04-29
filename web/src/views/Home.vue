@@ -1,6 +1,6 @@
 <template>
 	<div>
-		User is: {{ user ? user.name : "No user" }}
+		User is: {{ me ? me.name : "No user" }}
 		<button @click="getUsers()">Get users</button>
 		<div v-for="user in users" :key="user.id">
 			User: {{ user.name }}
@@ -14,7 +14,7 @@ export default {
 	data() {
 		return {
 			api: new API(),
-			user: null,
+			me: null,
 			users: []
 		};
 	},
@@ -24,16 +24,16 @@ export default {
 	methods: {
 		loadData: function () {
 			console.log("Loading")
-			this.user = JSON.parse(localStorage.getItem("demo-user"));
-			if (!this.user) {
-				this.user = {name: "Me", id: 1};
-				localStorage.setItem("demo-user", JSON.stringify(this.user));
+			this.me = JSON.parse(localStorage.getItem("demo-user"));
+			if (!this.me) {
+				this.me = {name: "Me", id: 1};
+				localStorage.setItem("demo-user", JSON.stringify(this.me));
 			}
 		},
 		getUsers: function () {
 			this.api.get(`users`).then(res => {
 				this.users = res.data;
-				console.log("Users are", this.user.length, this.users);
+				console.log("Users are", this.users);
 			});
 		}
 	}
