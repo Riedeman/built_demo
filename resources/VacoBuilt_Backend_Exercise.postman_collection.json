@@ -1,10 +1,121 @@
 {
 	"info": {
-		"_postman_id": "55f101b2-6d6d-48d9-9c81-8c97b9dd6088",
+		"_postman_id": "27f6bb71-2a98-459d-9317-43c44b057ce2",
 		"name": "VacoBuilt Backend Exercise",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "465461"
 	},
 	"item": [
+		{
+			"name": "Get Blog Post",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{API_URL}}/posts/1",
+					"protocol": "http",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Single Blog Post",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{API_URL}}/posts/4",
+							"protocol": "https",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"posts",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 31 Jan 2022 20:08:57 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"title\": \"Why you should use TypeScript for writing Cloud Functions\",\n    \"text\": \"<p>Are you looking for something new to learn this year?  Then let me suggest <a href=\\\"http://www.typescriptlang.org/\\\">TypeScript</a> for development with Cloud Functions!</p><p>Not long ago, the Cloud Functions for Firebase team <a href=\\\"http://firebase.googleblog.com/2017/12/improve-productivity-with-typescript.html\\\">released an update</a> to the <a href=\\\"https://firebase.google.com/docs/cli/\\\">Firebase CLI</a> that makes it easy for you to write your functions in TypeScript, rather than JavaScript.  The Firebase team encourages you to consider switching to TypeScript, but I can imagine you might be reluctant to learn a new language, especially if you're already comfortable with JavaScript.  The great news is that TypeScript offers you a bunch of benefits that are easy to start using today.</p>\",\n    \"timeStamp\": \"2022-01-31T11:15:08.834575\",\n    \"categoryId\": 2,\n    \"category\": {\n        \"id\": 2,\n        \"name\": \"Technology\"\n    }\n}"
+				},
+				{
+					"name": "Get Blog Posts By Category",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{API_URL}}/posts?categoryId=2",
+							"protocol": "https",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "categoryId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 31 Jan 2022 19:50:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"title\": \"Introducing Query-based Security Rules\",\n        \"text\": \"<p>Securing your Firebase Realtime Database just got easier with our newest feature: <strong>query-based rules</strong>. Query-based rules allow you to limit access to a subset of data. Need to restrict a query to return a maximum of 10 records? Want to ensure users are only retrieving the first 20 records instead of the last 20? Want to let a user query for only their documents? Not a problem. Query-based rules has you covered. Query-based rules can even help you simplify your data structure. Read on to learn how!</p>\",\n        \"timeStamp\": \"2022-01-31T11:15:08.762885\",\n        \"categoryId\": 2,\n        \"category\": {\n            \"id\": 2,\n            \"name\": \"Technology\"\n        }\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Why you should use TypeScript for writing Cloud Functions\",\n        \"text\": \"<p>Are you looking for something new to learn this year?  Then let me suggest <a href=\\\"http://www.typescriptlang.org/\\\">TypeScript</a> for development with Cloud Functions!</p><p>Not long ago, the Cloud Functions for Firebase team <a href=\\\"http://firebase.googleblog.com/2017/12/improve-productivity-with-typescript.html\\\">released an update</a> to the <a href=\\\"https://firebase.google.com/docs/cli/\\\">Firebase CLI</a> that makes it easy for you to write your functions in TypeScript, rather than JavaScript.  The Firebase team encourages you to consider switching to TypeScript, but I can imagine you might be reluctant to learn a new language, especially if you're already comfortable with JavaScript.  The great news is that TypeScript offers you a bunch of benefits that are easy to start using today.</p>\",\n        \"timeStamp\": \"2022-01-31T11:15:08.834575\",\n        \"categoryId\": 2,\n        \"category\": {\n            \"id\": 2,\n            \"name\": \"Technology\"\n        }\n    }\n]"
+				}
+			]
+		},
 		{
 			"name": "Get Blog Posts",
 			"protocolProfileBehavior": {
@@ -14,8 +125,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://{{API_URL}}/posts",
-					"protocol": "https",
+					"raw": "http://{{API_URL}}/posts",
+					"protocol": "http",
 					"host": [
 						"{{API_URL}}"
 					],
@@ -124,7 +235,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\n    \"title\": \"New Blog Post\",\n    \"text\": \"This is the new post\",\n    \"categoryId\": 1\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -132,8 +243,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{API_URL}}/posts",
-					"protocol": "https",
+					"raw": "http://{{API_URL}}/posts",
+					"protocol": "http",
 					"host": [
 						"{{API_URL}}"
 					],
@@ -203,8 +314,104 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://{{API_URL}}/posts",
-					"protocol": "https",
+					"raw": "http://{{API_URL}}/posts/2",
+					"protocol": "http",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"posts",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete All Posts",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{API_URL}}/posts",
+							"protocol": "https",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 31 Jan 2022 21:17:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Delete Blog Post",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{API_URL}}/posts/2",
+							"protocol": "https",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"posts",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 31 Jan 2022 19:51:53 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete ALL Blog Posts",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{API_URL}}/posts",
+					"protocol": "http",
 					"host": [
 						"{{API_URL}}"
 					],
@@ -248,7 +455,7 @@
 						}
 					],
 					"cookie": [],
-					"body": null
+					"body": ""
 				},
 				{
 					"name": "Delete Blog Post",
@@ -285,7 +492,7 @@
 						}
 					],
 					"cookie": [],
-					"body": null
+					"body": ""
 				}
 			]
 		},
@@ -299,7 +506,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\n    \"title\": \"Newly Updated Blog Post\",\n    \"text\": \"This a whole new post\",\n    \"categoryId\": 3\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -307,13 +514,14 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{API_URL}}/posts",
-					"protocol": "https",
+					"raw": "http://{{API_URL}}/posts/1",
+					"protocol": "http",
 					"host": [
 						"{{API_URL}}"
 					],
 					"path": [
-						"posts"
+						"posts",
+						"1"
 					]
 				}
 			},
@@ -378,8 +586,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://{{API_URL}}/categories/",
-					"protocol": "https",
+					"raw": "http://{{API_URL}}/categories/",
+					"protocol": "http",
 					"host": [
 						"{{API_URL}}"
 					],
@@ -442,8 +650,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://{{API_URL}}/posts/generateSampleData",
-					"protocol": "https",
+					"raw": "http://{{API_URL}}/posts/generateSampleData",
+					"protocol": "http",
 					"host": [
 						"{{API_URL}}"
 					],

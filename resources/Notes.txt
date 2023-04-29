@@ -1,0 +1,2 @@
+Changed postman routes from https to http for local development
+Added missing postman calls from documentation
