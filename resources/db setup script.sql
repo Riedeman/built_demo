@@ -5,16 +5,23 @@ DROP DATABASE `built`;
 CREATE DATABASE `built`;
 USE built;
 
-DROP TABLE IF EXISTS users;
-CREATE TABLE `users` (
+DROP TABLE IF EXISTS posts;
+CREATE TABLE `posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) DEFAULT NULL,
-  `pin` varchar(5) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `title` varchar(45) CHARACTER SET latin1 COLLATE latin1_bin DEFAULT NULL,
+  `contents` longtext,
+  `timeStamp` datetime DEFAULT NULL,
+  `categoryId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-ALTER TABLE users AUTO_INCREMENT = 1;
 
-insert into users (name, pin) values ('Mark','ABC1');
-insert into users (name, pin) values ('Amy','123A');
 
-select * from users;
+ALTER TABLE posts AUTO_INCREMENT = 1;
+
+DROP TABLE IF EXISTS categories;
+CREATE TABLE `built`.`categories` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC));

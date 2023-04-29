@@ -51,13 +51,14 @@ async function query(q) {
 const utilities = {
 	findByPK: findByPK,
 	findOne: findOne,
-	query: query
+	query: query,
+	clean: clean
 }
 exports.utilities = utilities;
 
 async function runTest(req, res) {
 	try {
-		let query = `select count(*) from users;`
+		let query = `select count(*) from posts;`
 		connection.query(query, (err, result) => {
 			if (err) {
 				console.log("UH OH", err);
@@ -72,3 +73,6 @@ async function runTest(req, res) {
 };
 runTest();
 
+function clean(t) {
+	return t ? t.replaceAll("'", "''").trim() : null;
+}
